@@ -1,6 +1,12 @@
 /*
- * Whole-page scroll-reveal animation, built with Motion (motion.dev) —
- * loaded as a plain ESM import, no bundler/build step required.
+ * Whole-page scroll-reveal animation, built with Motion (motion.dev).
+ *
+ * Loaded as a classic (non-module) script that dynamically imports Motion
+ * from a CDN at runtime, deliberately NOT `type="module"`: a module script
+ * requesting a local file is blocked by CORS when the page is opened via
+ * `file://` (origin "null") — dynamic `import()` from a plain script has
+ * no such restriction, so this still works if someone just double-clicks
+ * index.html instead of serving it.
  *
  * Safety rule: several elements on this page already carry a load-bearing
  * inline `transform: rotate(...)` (award ribbons, the truck-card rail,
@@ -10,9 +16,10 @@
  * is only ever faded (opacity), never translated. Everything else gets a
  * soft fade-up.
  */
-import { animate, inView, stagger } from 'https://cdn.jsdelivr.net/npm/motion@11/+esm';
-
-function start() {
+async function start() {
+  const motion = await import('https://cdn.jsdelivr.net/npm/motion@11/+esm').catch(() => null);
+  if (!motion) return; // CDN unavailable — nothing was pre-hidden, page stays as-is
+  const { animate, inView, stagger } = motion;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const EASE = [0.16, 1, 0.3, 1];
   const DUR = reduce ? 0 : 0.7;
