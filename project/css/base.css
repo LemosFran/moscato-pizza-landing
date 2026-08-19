@@ -1,0 +1,19 @@
+body{margin:0;background:var(--bg-page);color:var(--text-primary);font-family:var(--font-body)}
+a{color:var(--link)}
+a:hover{color:var(--link-hover)}
+img{user-select:none}
+button{font:inherit}
+.mp-btn{transition:transform .15s ease}
+.mp-btn:hover{transform:translateY(-2px)}
+
+@media (max-width:1140px){
+  .mp-grid2{grid-template-columns:1fr!important}
+  .mp-collage{margin:0 auto}
+  .mp-testi{grid-template-columns:repeat(2,1fr)!important}
+}
+@media (max-width:900px){
+  .mp-menu-grid{grid-template-columns:1fr!important}
+}
+@media (max-width:640px){
+  .mp-testi{grid-template-columns:1fr!important}
+}

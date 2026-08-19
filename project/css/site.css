@@ -172,13 +172,13 @@
 .mp-loc-pola--a{left:0;top:0;z-index:3}
 .mp-loc-pola--b{left:196px;top:74px;z-index:2}
 .mp-loc-pola--c{left:96px;top:188px;z-index:4}
-.mp-loc-stat{position:absolute;left:266px;top:238px;z-index:5;width:196px;height:185px;background:url('assets/frame-stat-brown.svg') center/100% 100% no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transform:rotate(2deg)}
+.mp-loc-stat{position:absolute;left:266px;top:238px;z-index:5;width:196px;height:185px;background:url('../assets/frame-stat-brown.svg') center/100% 100% no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transform:rotate(2deg)}
 .mp-loc-stat b{font-family:var(--font-display);font-size:4.2rem;line-height:.9;color:var(--sky-200)}
 .mp-loc-stat>span{font-family:var(--font-accent);font-size:1.25rem;color:var(--sky-200)}
 .mp-loc-stat b span,.mp-loc-card h3 span,.mp-loc-card p span{font:inherit;color:inherit}
 .mp-loc-right{position:relative;display:flex;flex-direction:column;align-items:flex-end;gap:0}
 .mp-loc-placa{width:min(430px,86%);height:auto;display:block;transform:rotate(-2deg) translateX(-40px);margin-bottom:-26px;z-index:3;position:relative}
-.mp-loc-card{position:relative;z-index:2;width:min(400px,100%);box-sizing:border-box;background:url('assets/frame-card-navy.svg') center/100% 100% no-repeat;padding:38px 42px 36px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;aspect-ratio:384/288}
+.mp-loc-card{position:relative;z-index:2;width:min(400px,100%);box-sizing:border-box;background:url('../assets/frame-card-navy.svg') center/100% 100% no-repeat;padding:38px 42px 36px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;aspect-ratio:384/288}
 .mp-loc-card h3{font:var(--text-accent-lg);color:var(--cream-100);margin:0}
 .mp-loc-card p{font-family:var(--font-body);font-size:.86rem;line-height:1.6;color:var(--sky-100);margin:0}
 .mp-loc-script{position:absolute;right:-6px;top:-58px;z-index:4}
