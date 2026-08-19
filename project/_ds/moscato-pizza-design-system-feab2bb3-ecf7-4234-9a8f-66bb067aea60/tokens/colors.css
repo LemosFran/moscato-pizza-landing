@@ -1,0 +1,44 @@
+:root{
+  /* base palette */
+  --navy-900:#0F2C56;
+  --navy-700:#16375F;
+  --navy-500:#2A4C7C;
+  --cream-100:#FBF7F1;
+  --cream-200:#F2EDE4;
+  --cream-300:#E9E1D3;
+  --mustard-500:#E5A82A;
+  --mustard-600:#C98F1B;
+  --sky-200:#BFDEED;
+  --sky-100:#DCEDF5;
+  --brown-700:#4F3C2C;
+  --brown-500:#6B5645;
+  --red-600:#B23A32;
+  --red-700:#8F2E28;
+  --green-600:#3F7A4E;
+  --green-700:#2E5C3A;
+  --ink:#12213B;
+  --paper:#F7F2EA;
+
+  /* semantic aliases */
+  --bg-page: var(--cream-200);
+  --bg-surface: var(--paper);
+  --bg-inverse: var(--navy-900);
+  --bg-accent: var(--mustard-500);
+  --bg-info: var(--sky-200);
+  --bg-stat-a: var(--brown-700);
+  --bg-stat-b: var(--navy-900);
+
+  --text-primary: var(--navy-900);
+  --text-on-inverse: var(--cream-100);
+  --text-muted: var(--brown-500);
+  --text-on-accent: var(--navy-900);
+
+  --border-primary: var(--navy-900);
+  --border-accent: var(--mustard-500);
+
+  --accent-italy-red: var(--red-600);
+  --accent-italy-green: var(--green-600);
+
+  --link: var(--navy-900);
+  --link-hover: var(--red-600);
+}

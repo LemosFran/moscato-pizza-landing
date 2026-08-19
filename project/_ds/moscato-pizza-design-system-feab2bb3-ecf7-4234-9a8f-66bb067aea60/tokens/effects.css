@@ -1,0 +1,24 @@
+:root{
+  --serrate-size: 10px;
+}
+.mp-stamp-edge{
+  clip-path: polygon(0.00% 0.00%,3.57% 3.20%,7.14% 0.00%,10.71% 3.20%,14.29% 0.00%,17.86% 3.20%,21.43% 0.00%,25.00% 3.20%,28.57% 0.00%,32.14% 3.20%,35.71% 0.00%,39.29% 3.20%,42.86% 0.00%,46.43% 3.20%,50.00% 0.00%,53.57% 3.20%,57.14% 0.00%,60.71% 3.20%,64.29% 0.00%,67.86% 3.20%,71.43% 0.00%,75.00% 3.20%,78.57% 0.00%,82.14% 3.20%,85.71% 0.00%,89.29% 3.20%,92.86% 0.00%,96.43% 3.20%,100.00% 0.00%,100.00% 0.00%,96.80% 5.00%,100.00% 10.00%,96.80% 15.00%,100.00% 20.00%,96.80% 25.00%,100.00% 30.00%,96.80% 35.00%,100.00% 40.00%,96.80% 45.00%,100.00% 50.00%,96.80% 55.00%,100.00% 60.00%,96.80% 65.00%,100.00% 70.00%,96.80% 75.00%,100.00% 80.00%,96.80% 85.00%,100.00% 90.00%,96.80% 95.00%,100.00% 100.00%,100.00% 100.00%,96.43% 96.80%,92.86% 100.00%,89.29% 96.80%,85.71% 100.00%,82.14% 96.80%,78.57% 100.00%,75.00% 96.80%,71.43% 100.00%,67.86% 96.80%,64.29% 100.00%,60.71% 96.80%,57.14% 100.00%,53.57% 96.80%,50.00% 100.00%,46.43% 96.80%,42.86% 100.00%,39.29% 96.80%,35.71% 100.00%,32.14% 96.80%,28.57% 100.00%,25.00% 96.80%,21.43% 100.00%,17.86% 96.80%,14.29% 100.00%,10.71% 96.80%,7.14% 100.00%,3.57% 96.80%,0.00% 100.00%,0.00% 100.00%,3.20% 95.00%,0.00% 90.00%,3.20% 85.00%,0.00% 80.00%,3.20% 75.00%,0.00% 70.00%,3.20% 65.00%,0.00% 60.00%,3.20% 55.00%,0.00% 50.00%,3.20% 45.00%,0.00% 40.00%,3.20% 35.00%,0.00% 30.00%,3.20% 25.00%,0.00% 20.00%,3.20% 15.00%,0.00% 10.00%,3.20% 5.00%,0.00% 0.00%);
+}
+.mp-grain{position:relative}
+.mp-grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.06;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size:180px 180px;
+}
+.mp-postcard{
+  border:var(--border-thick) solid var(--border-primary);
+  border-radius:18px;
+  position:relative;
+  background:var(--bg-surface);
+}
+.mp-postcard::before{
+  content:"";position:absolute;inset:6px;border:var(--border-thin) solid var(--border-primary);border-radius:12px;pointer-events:none;
+}
+.mp-dashed-rule{border-bottom:var(--border-thin) dashed var(--border-primary);}
+.mp-hard-shadow{box-shadow:var(--shadow-card);}
+.mp-tilt-left{transform:rotate(-4deg);}
+.mp-tilt-right{transform:rotate(3deg);}

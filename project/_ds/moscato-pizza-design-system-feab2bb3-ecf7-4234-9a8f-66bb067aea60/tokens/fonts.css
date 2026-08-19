@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
+@font-face{
+  font-family:'Salo Uberto';
+  src:url('../assets/fonts/salo-uberto.ttf') format('truetype');
+  font-weight:400 900;
+  font-display:swap;
+}
+@font-face{
+  font-family:'Awesome Serif';
+  src:url('../assets/fonts/AwesomeSerifItalic-MediumTall.otf') format('opentype');
+  font-weight:500;
+  font-style:italic;
+  font-display:swap;
+}
+@font-face{
+  font-family:'Azeret Mono';
+  src:url('../assets/fonts/AzeretMono-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight:100 900;
+  font-display:swap;
+}
+:root{
+  --font-display: 'Salo Uberto', ui-serif, Georgia, serif;
+  --font-body: 'Azeret Mono', 'Courier New', monospace;
+  --font-script: 'Caveat', cursive;
+  --font-accent: 'Awesome Serif', ui-serif, Georgia, serif;
+}
