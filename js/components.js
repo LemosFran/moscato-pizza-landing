@@ -78,13 +78,14 @@
     navy: { background: 'var(--navy-900)', color: 'var(--text-on-inverse)' },
   };
   function Button(props, ...children) {
-    const { variant = 'primary', size = 'md', onClick, style = '', extraClass = '' } = props;
+    const { variant = 'primary', size = 'md', onClick, ariaLabel, style = '', extraClass = '' } = props;
     const height = BTN_HEIGHTS[size];
     const fontSize = BTN_FONTS[size];
     const capWidth = Math.round(height * 0.2998);
     const v = BTN_VARIANTS[variant] || BTN_VARIANTS.primary;
     return el('button', {
       class: `mp-btn ${extraClass}`,
+      'aria-label': ariaLabel,
       style: `position:relative;display:inline-flex;align-items:center;justify-content:center;border:none;background:transparent;padding:0;height:${height}px;min-width:200px;cursor:pointer;transition:transform .15s ease;${style}`,
       onclick: onClick,
     },
@@ -187,7 +188,7 @@
     blue: { paper: 'var(--sky-100)', ink: 'var(--navy-900)', slot: 'var(--sky-200)' },
     navy: { paper: 'var(--navy-900)', ink: 'var(--cream-100)', slot: 'var(--navy-700)' },
   };
-  function LetterCard({ title = 'Ciao!', paragraphs = [], children, photo, photoAlt = '', photoLabel = 'Photo', photoRatio = '4 / 3', photoPosition = 'top', signature, tone = 'cream', width = 539, style = '' }) {
+  function LetterCard({ title = 'Ciao!', paragraphs = [], children, photo, photoAlt = '', photoLabel = 'Photo', photoRatio = '4 / 3', photoPosition = 'top', signature, signatureImage, tone = 'cream', width = 539, style = '' }) {
     const t = LTR_TONES[tone] || LTR_TONES.cream;
     const line = tone === 'navy' ? 'var(--cream-100)' : 'var(--navy-900)';
     const s = width / LTR_UNIT;
@@ -206,7 +207,12 @@
       el('div', { style: `font-family:var(--font-body);font-size:${Math.max(11, 14 * s)}px;line-height:1.75` }, body),
       photoPosition === 'bottom' ? slot : null,
       signature ? el('div', { style: `margin-top:${44 * s}px` },
-        el('div', { style: `font-family:var(--font-body);font-size:${Math.max(10, 13 * s)}px;letter-spacing:var(--letter-caps)` }, signature)
+        el('div', { style: `font-family:var(--font-body);font-size:${Math.max(10, 13 * s)}px;letter-spacing:var(--letter-caps)` }, signature),
+        signatureImage ? el('img', {
+          src: signatureImage,
+          alt: `Firma de ${signature}`,
+          style: `display:block;width:${144 * s}px;height:auto;margin:${6 * s}px auto 0`,
+        }) : null
       ) : null
     );
     const shell5 = shellLetter(r, p1 + 2 + gap, '', inner);

@@ -119,7 +119,7 @@
   const MP_STEPS = [
     { step: 'Paso 1', title: 'Pedí el presupuesto', text: 'Contanos fecha, lugar y cuánta gente son. Te respondemos en 24 horas con todo cerrado.' },
     { step: 'Paso 2', title: 'Preparación', text: 'Amasamos 72 horas antes: así la masa gana sabor, base finita y borde bien aireado.' },
-    { step: 'Paso 3', title: 'Montaje in situ', text: 'Llegamos 1 a 2 horas antes para armar todo. El truck entra donde sea, adentro o afuera.' },
+    { step: 'Paso 3', title: 'Montaje en sitio', text: 'Llegamos 1 a 2 horas antes para armar todo. El truck entra donde sea, adentro o afuera.' },
     { step: 'Paso 4', title: '¡A comer!', text: 'Salen 12 pizzas cada 4 minutos, directo del horno a la mano de cada invitado.' },
   ];
 
@@ -237,7 +237,7 @@
       ),
       el('div', { id: 'carta', class: 'mp-menu-grid' },
         LetterCard({
-          title: 'Pizze', tone: 'cream', width: 520, photoRatio: 'auto', photoLabel: '', signature: 'Chef Alejandro',
+          title: 'Pizze', tone: 'cream', width: 520, photoRatio: 'auto', photoLabel: '', signature: 'Chef Alejandro', signatureImage: 'assets/firma-chef.svg',
           children: el('div', { class: 'mp-menu-list' },
             MenuRow({ name: 'Margherita DOP', desc: 'san marzano, fior di latte, albahaca fresca', price: '$12.500' }),
             MenuRow({ name: 'Moscato Especial', desc: 'mortadela, stracciatella, pistacho tostado', price: '$14.900' }),
@@ -247,7 +247,7 @@
           ),
         }),
         LetterCard({
-          title: 'Paste', tone: 'blue', width: 520, photoPosition: 'none', signature: 'La Nonna',
+          title: 'Paste', tone: 'blue', width: 520, photoPosition: 'none', signature: 'Chef Alejandro', signatureImage: 'assets/firma-chef.svg',
           children: el('div', { class: 'mp-menu-list' },
             MenuRow({ name: 'Tallarines al Pesto', desc: 'albahaca, parmesano, nueces del litoral', price: '$11.900' }),
             MenuRow({ name: 'Sorrentinos', desc: 'jamón y ricota, salsa de tomates asados', price: '$13.400' }),
@@ -282,7 +282,12 @@
           el('div', { class: 'mp-loc-card' },
             el('h3', {}, '¿Venís a comer con nosotros?'),
             el('p', {}, 'Bv. Lisandro de la Torre 1580 · martes a domingo 12–23h', el('br'), 'San Martín 2340 · miércoles a domingo 18–24h'),
-            Button({ variant: 'primary', size: 'lg', onClick: () => global.mpScrollTo('contacto') }, 'Cómo llegar')
+            Button({
+              variant: 'primary',
+              size: 'lg',
+              onClick: () => global.open('https://www.google.com/maps/search/?api=1&query=Moscato%20Pizza%20Casilda', '_blank', 'noopener'),
+              ariaLabel: 'Abrir Moscato Pizza en Google Maps',
+            }, 'Cómo llegar')
           )
         )
       )
