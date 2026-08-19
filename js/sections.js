@@ -17,7 +17,6 @@
             src: 'assets/h1-container-msv73e3a-eea6.svg',
             alt: 'Reseñas ★★★★☆ 4.6 — Simplemente un foodtruck super italiano — 3000+ clientes · 480+ pizzas p/ mes',
             class: 'mp-hero-plaque', width: '487', height: '264',
-            style: 'width:487px;height:auto;aspect-ratio:487 / 264',
           })
         ),
         el('div', { class: 'mp-hero-right' },
