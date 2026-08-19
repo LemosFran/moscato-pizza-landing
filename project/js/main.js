@@ -22,5 +22,7 @@
     root.appendChild(s.MenuSection());
     root.appendChild(s.StoresSection());
     root.appendChild(s.FooterSection());
+
+    document.dispatchEvent(new CustomEvent('mp:ready'));
   });
 })(window);
