@@ -6,6 +6,7 @@
   function HeroSection() {
     const section = el('section', { 'data-screen-label': 'Hero', class: 'mp-hero mp-grain' },
       el('div', { class: 'mp-hero-photo' }, el('img', { src: 'assets/hero-truck-crew.png', alt: 'El equipo de Moscato Pizza en la ventanilla del food truck' })),
+      el('img', { src: 'assets/bars-deco-mobile.svg', alt: '', 'aria-hidden': 'true', class: 'mp-hero-bars' }),
       el('div', { class: 'mp-hero-collage' },
         el('div', { class: 'mp-hero-left' },
           el('div', { class: 'mp-hero-pola-a' }, PolaroidPhoto({ src: 'assets/eating-slice-boxes.png', alt: 'Comiendo una porción sobre las cajas Moscato', width: 230, rotate: -3, caption: '' })),
@@ -35,7 +36,7 @@
       el('div', { class: 'mp-story-inner' },
         el('div', { class: 'mp-story-letter' },
           LetterCard({
-            title: '¡Ciao!', width: 520, tone: 'blue', signature: 'Chef Alejandro', photoRatio: 'auto', photoLabel: '',
+            title: '¡Ciao!', width: 520, tone: 'blue', signature: 'Chef Alejandro', signatureImage: 'assets/firma-chef.svg', photoRatio: 'auto', photoLabel: '',
             paragraphs: [
               'Moscato nació en 2017 en una esquina de Casilda: un horno prestado, tres amigos y la idea fija de que la napolitana de verdad también se hace acá. La tradición viene de familia; la velocidad la aprendimos en la calle.',
               'Hoy somos dos locales y un food truck que cruza la provincia. Nuestros hornos Cuppone nos dejan sacar 12 pizzas cada 4 minutos sin resignar nada: masa de 48 horas, borde alto y bien tostado, ingredientes de productores santafesinos.',
@@ -95,6 +96,7 @@
     ));
     const nudge = (dir) => rail.scrollBy({ left: dir * 360, behavior: 'smooth' });
     return el('section', { id: 'truck', 'data-screen-label': 'Food Truck', class: 'mp-truck mp-grain' },
+      el('img', { src: 'assets/bars-deco.svg', alt: '', 'aria-hidden': 'true', class: 'mp-truck-bars' }),
       el('div', { class: 'mp-truck-head' },
         el('div', {},
           el('h2', { class: 'mp-truck-title' }, '¿Reservás nuestro food truck?'),
@@ -237,7 +239,7 @@
       ),
       el('div', { id: 'carta', class: 'mp-menu-grid' },
         LetterCard({
-          title: 'Pizze', tone: 'cream', width: 520, photoRatio: 'auto', photoLabel: '', signature: 'Chef Alejandro', signatureImage: 'assets/firma-chef.svg',
+          title: 'Pizza', tone: 'cream', width: 520, photoRatio: 'auto', photoLabel: '', signature: 'Chef Alejandro', signatureImage: 'assets/firma-chef.svg',
           children: el('div', { class: 'mp-menu-list' },
             MenuRow({ name: 'Margherita DOP', desc: 'san marzano, fior di latte, albahaca fresca', price: '$12.500' }),
             MenuRow({ name: 'Moscato Especial', desc: 'mortadela, stracciatella, pistacho tostado', price: '$14.900' }),

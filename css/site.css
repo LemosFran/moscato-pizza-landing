@@ -33,7 +33,8 @@
 .mp-hero{position:relative;background:var(--cream-200);margin-top:-100px;padding-bottom:64px;overflow:hidden}
 .mp-hero-photo{height:min(58vw,680px);min-height:420px}
 .mp-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
-.mp-hero-collage{position:relative;z-index:3;max-width:1420px;margin:-230px auto 0;padding:0 var(--section-gutter);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:20px}
+.mp-hero-bars{position:absolute;z-index:2;top:max(420px,min(58vw,680px));left:0;width:100%;height:24px;object-fit:cover;object-position:center;pointer-events:none}
+.mp-hero-collage{position:relative;z-index:3;width:100%;max-width:1420px;box-sizing:border-box;margin:-230px auto 0;padding:0 var(--section-gutter);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:20px}
 .mp-hero-left{position:relative;height:330px}
 .mp-hero-pola-a{position:absolute;left:-90px;bottom:56px}
 .mp-hero-pola-b{position:absolute;left:110px;bottom:0}
@@ -45,13 +46,13 @@
 @media (max-width:1180px){.mp-hero-collage{grid-template-columns:1fr;justify-items:center;margin-top:-150px;gap:44px}.mp-hero-center{width:min(560px,100%);order:1}.mp-hero-right{order:2;justify-content:center;padding-bottom:0}.mp-hero-left{order:3;width:min(460px,100%);height:360px}.mp-hero-pola-a{display:none}.mp-hero-pola-b{left:0;bottom:70px}.mp-hero-script{left:auto;right:0;bottom:0;width:250px;transform:rotate(-4deg)}.mp-hero-medallion{display:block;right:-56px;bottom:-96px;width:150px;z-index:-1}}
 @media (max-width:1080px){.mp-hero{margin-top:-88px}}
 @media (max-width:640px){.mp-hero-collage{margin-top:-70px;gap:30px}.mp-hero-left{height:300px;width:100%}.mp-hero-pola-b{left:-8px;bottom:36px;transform:scale(.8);transform-origin:left bottom}.mp-hero-script{right:0;left:auto;bottom:0;width:auto}.mp-hero-script .mp-stitch{transform:scale(.66);transform-origin:right bottom}.mp-hero-medallion{width:104px;right:-10px;bottom:-72px}}
-@media (max-width:520px){.mp-hero{padding-bottom:48px}.mp-hero-photo{min-height:340px}.mp-hero-right{width:100%}.mp-hero-right>div:first-child{width:100%!important;max-width:320px;margin:0 auto}}
+@media (max-width:520px){.mp-hero{padding-bottom:48px}.mp-hero-photo{min-height:340px}.mp-hero-bars{top:max(340px,min(58vw,680px))}.mp-hero-right{width:100%}.mp-hero-right>div:first-child{width:100%!important;max-width:320px;margin:0 auto}}
 
 /* ---------- story ---------- */
 .mp-story{position:relative;background:var(--cream-200);padding:70px var(--section-gutter) 90px;overflow:hidden}
 .mp-story-medallion{position:absolute;left:-92px;top:330px;width:200px;z-index:0}
 .mp-story-inner{position:relative;z-index:1;max-width:1360px;margin:0 auto;display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:20px;align-items:center}
-.mp-story-collage{position:relative;height:620px}
+.mp-story-collage{position:relative;width:700px;height:620px;justify-self:center}
 .mp-story-pola-a{position:absolute;left:20px;top:130px;z-index:1}
 .mp-story-pola-b{position:absolute;left:210px;top:20px;z-index:2}
 .mp-story-pola-c{position:absolute;left:430px;top:200px;z-index:1}
@@ -64,11 +65,12 @@
 .mp-shapestat-label{font-family:var(--font-accent);text-transform:uppercase;letter-spacing:.14em;font-weight:400;color:var(--sky-200)}
 @media (max-width:1240px){.mp-story-inner{grid-template-columns:minmax(0,1fr);justify-items:center;gap:48px}.mp-story-letter{width:100%;max-width:520px}.mp-story-letter>*{width:100%!important;max-width:100%!important;box-sizing:border-box}.mp-story-collage{width:700px;max-width:100%}.mp-story-medallion{display:none}}
 @media (max-width:760px){.mp-story{padding:52px var(--section-gutter) 70px}.mp-story-inner{gap:32px}.mp-story-collage{height:520px;transform:scale(.72);transform-origin:top center;width:700px;max-width:none;margin-bottom:-140px}}
-@media (max-width:560px){.mp-story-collage{transform:scale(.56);margin-bottom:-229px}}
-@media (max-width:450px){.mp-story-collage{transform:scale(.46);margin-bottom:-281px}}
+@media (max-width:560px){.mp-story-collage{transform:scale(.58);margin-bottom:-218px}}
+@media (max-width:390px){.mp-story-collage{transform:scale(.52);margin-bottom:-250px}}
 
 /* ---------- food trucks ---------- */
-.mp-truck{background:var(--navy-900);padding:70px 0 96px}
+.mp-truck{position:relative;background:var(--navy-900);padding:70px 0 96px;overflow:visible}
+.mp-truck-bars{position:absolute;z-index:3;left:0;top:-29px;width:100%;height:29px;object-fit:cover;object-position:center;pointer-events:none}
 .mp-truck-head{max-width:1400px;margin:0 auto;padding:0 var(--section-gutter) 40px;display:grid;grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:'title title title' 'copy cta script' 'copy cta arrows';gap:8px 32px;align-items:start}
 .mp-truck-title{grid-area:title;font:var(--text-display-xl);text-transform:uppercase;letter-spacing:var(--letter-caps);color:var(--sky-200);margin:0 0 18px;max-width:16ch}
 .mp-truck-copy{grid-area:copy;font:var(--text-body-md);color:var(--sky-100);margin:0;max-width:44ch}
